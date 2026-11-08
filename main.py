@@ -285,6 +285,11 @@ class TryHackMeClient:
     def get_stats(self, username: str) -> THMStats:
         """Fetch all stats and return a normalized THMStats object."""
         raw_profile = self.fetch_public_profile(username)
+        if not raw_profile:
+            raise RuntimeError(
+                "TryHackMe returned no profile data (rate limited or blocked by bot protection); "
+                "refusing to write empty stats."
+            )
 
         # Handle nested data structure: { "status": "success", "data": { ... } }
         data = raw_profile.get("data", raw_profile) if isinstance(raw_profile, dict) else {}

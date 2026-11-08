@@ -5,12 +5,5 @@
 ---
 
 <!-- THM-LOG:START -->
-
-### 📅 2026-11-08 Snapshot
-- **Rank:** N/A
-- **Rooms Completed:** 0
-- **Points:** 0
-- **Streak:** 0 days
-- **Badges:** 0
-
+*No activity has been logged yet. The automated tracking workflow will populate practice sessions here.*
 <!-- THM-LOG:END -->
