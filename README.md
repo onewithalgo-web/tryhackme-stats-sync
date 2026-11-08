@@ -22,5 +22,3 @@ python main.py --mock --dry-run          # preview with sample data
 python main.py -u YOUR_USERNAME --local  # update README and log on disk
 python -m unittest discover tests        # tests
 ```
-
-Based on [byethami/MtDenali](https://github.com/byethami/MtDenali) (MIT).
