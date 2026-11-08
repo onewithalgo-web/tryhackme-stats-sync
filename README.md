@@ -1,6 +1,6 @@
 # TryHackMe Stats Sync
 
-Fetches my TryHackMe rank, points, streak, rooms and badges every day and writes them into this README and `practice-log.md` using GitHub Actions.
+My completed TryHackMe rooms. TryHackMe blocks automated requests, so the list below is a manual snapshot. The included script and workflow try to sync it automatically and fail instead of writing empty data when blocked.
 
 <!-- THM-STATS:START -->
 ### TryHackMe: [ndv.miso](https://tryhackme.com/p/ndv.miso)
