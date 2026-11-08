@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Denali Connect: TryHackMe to GitHub Activity Automator
+TryHackMe Stats Sync: TryHackMe to GitHub Activity Automator
 ======================================================
 Fetches a user's progress, completed rooms, badges, and statistics from
 TryHackMe and automatically updates a GitHub repository (README and practice log)
@@ -36,7 +36,7 @@ logging.basicConfig(
     format="[%(asctime)s] [%(levelname)s] %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
-logger = logging.getLogger("denali-connect")
+logger = logging.getLogger("thm-stats-sync")
 
 # Constant Markers for Dynamic Content Injection
 README_MARKER_START = "<!-- THM-STATS:START -->"
@@ -420,7 +420,7 @@ class ContentFormatter:
 
         lines: List[str] = [
             README_MARKER_START,
-            "<!-- Do not edit this section directly; automatically synced by Denali Connect -->",
+            "<!-- Do not edit this section directly; automatically synced by TryHackMe Stats Sync -->",
             "### 🛡️ Live TryHackMe Profile Statistics",
             "",
             f'<div align="center">',
@@ -479,7 +479,7 @@ class ContentFormatter:
             lines.append("")
 
         lines.extend([
-            f"*Automated with [Denali Connect](https://github.com) • Updates daily at 00:00 UTC*",
+            f"*Automated with TryHackMe Stats Sync • Updates daily at 00:00 UTC*",
             README_MARKER_END,
         ])
 
@@ -698,7 +698,7 @@ def run_sync(
 ) -> int:
     """Coordinates fetching data and updating GitHub target files."""
     logger.info("=" * 60)
-    logger.info("Starting Denali Connect TryHackMe to GitHub Activity Sync")
+    logger.info("Starting TryHackMe Stats Sync TryHackMe to GitHub Activity Sync")
     logger.info("=" * 60)
 
     # 1. Fetch Stats
@@ -754,7 +754,7 @@ def run_sync(
             log_commit_msg = f"Log TryHackMe activity for {stats.synced_at[:10]} [skip ci]"
             updater.commit_file(target_log, updated_log, log_commit_msg, log_sha)
 
-    logger.info("Denali Connect sync completed successfully!")
+    logger.info("TryHackMe Stats Sync sync completed successfully!")
     return 0
 
 
@@ -764,7 +764,7 @@ def run_sync(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Denali Connect: Automated TryHackMe to GitHub Activity Sync",
+        description="TryHackMe Stats Sync: Automated TryHackMe to GitHub Activity Sync",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(

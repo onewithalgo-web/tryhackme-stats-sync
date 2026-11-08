@@ -1,6 +1,6 @@
 # 🛡️ TryHackMe Practice Log
 
-*Automated cybersecurity training log powered by [Denali Connect](https://github.com).*
+*Automated cybersecurity training log powered by TryHackMe Stats Sync.*
 
 ---
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Unit tests for Denali Connect: TryHackMe to GitHub Activity Automator
+Unit tests for TryHackMe Stats Sync: TryHackMe to GitHub Activity Automator
 """
 
 import os
